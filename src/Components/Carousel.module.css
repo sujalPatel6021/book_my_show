@@ -1,0 +1,61 @@
+.carouselContainer {
+  width: 100%;
+  height: 300px;
+  margin: auto;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.swiper {
+  overflow: visible !important;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.slideImage {
+  width: 100%;
+  height: 307px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1024px) {
+  .carouselContainer {
+    height: 280px;
+  }
+
+  .slideImage {
+    height: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .carouselContainer {
+    height: 240px;
+    padding: 16px 0;
+  }
+
+  .slideImage {
+    height: 240px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselContainer {
+    height: 200px;
+  }
+
+  .slideImage {
+    height: 200px;
+  }
+}

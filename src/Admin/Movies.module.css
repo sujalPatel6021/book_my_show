@@ -1,0 +1,376 @@
+.moviesDashboardContainer {
+  padding: 2rem;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+}
+
+.moviesDashboardContainer.sidebarCollapsed {
+  margin-left: 70px;
+}
+.moviesDashboardContainer.sidebarClosed {
+  margin-left: 0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.headerIcon {
+  color: #7c3aed;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  color: #64748b;
+}
+
+.searchInput {
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  width: 250px;
+  transition: all 0.2s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.1);
+}
+
+.addButton {
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.addButton:hover {
+  background-color: #6d28d9;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ede9fe;
+  color: #7c3aed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 0.25rem;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.movieTableContainer {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.movieTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.movieTable th {
+  background-color: #f1f5f9;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #334155;
+}
+
+.movieTable td {
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.movieTable tr:last-child td {
+  border-bottom: none;
+}
+
+.movieTable tr:hover td {
+  background-color: #f8fafc;
+}
+
+.editingRow td {
+  background-color: #f5f3ff !important;
+}
+
+.editingRow input,
+.editingRow select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.editingRow input:focus,
+.editingRow select:focus {
+  outline: none;
+  border-color: #7c3aed;
+}
+
+.editButton,
+.deleteButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+.divflex {
+  display: flex;
+  flex-direction: column;
+}
+.editButton {
+  color: #3b82f6;
+  margin-right: 0.5rem;
+}
+
+.editButton:hover {
+  background-color: #dbeafe;
+}
+
+.deleteButton {
+  color: #ef4444;
+}
+
+.deleteButton:hover {
+  background-color: #fee2e2;
+}
+
+.saveButton,
+.cancelButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.saveButton {
+  background-color: #10b981;
+  color: white;
+}
+
+.saveButton:hover {
+  background-color: #059669;
+}
+
+.cancelButton {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+.cancelButton:hover {
+  background-color: #cbd5e1;
+}
+
+.genreBadge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.genreBadge.action {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.genreBadge.drama {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.genreBadge.comedy {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.genreBadge.thriller {
+  background-color: #e9d5ff;
+  color: #6b21a8;
+}
+
+.genreBadge.historical {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.genreBadge.sci-fi {
+  background-color: #bfdbfe;
+  color: #1e3a8a;
+}
+
+.statusBadge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.statusBadge.upcoming {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.statusBadge.showing {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.statusBadge.completed {
+  background-color: #e2e8f0;
+  color: #334155;
+}
+
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.starIcon {
+  color: #f59e0b;
+}
+
+.noResults {
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+.darkMode {
+  background-color: #3d424e;
+  color: #e2e8f0;
+}
+.darkMode .statCard {
+  background: linear-gradient(135deg, #1a1a1a, #2c2c2c, #3a3a3a);
+  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.3);
+}
+.darkMode .statLabel,
+.darkMode .statValue {
+  color: rgb(255, 255, 255);
+}
+.darkMode .searchInput {
+  background-color: rgb(52, 52, 52);
+  color: rgb(214, 208, 208);
+  border: 0.1px solid white;
+}
+.darkMode .headerIcon,
+.darkMode .header h1 {
+  color: rgb(236, 232, 232);
+}
+.darkMode .movieTable {
+  background: rgb(91, 91, 91);
+}
+.darkMode .movieTable td {
+  color: white;
+}
+.darkMode .movieTable tr:hover td {
+  background-color: #868686;
+}
+.darkMode .movieTable thead tr th {
+  color: white;
+  background-color: rgb(45, 45, 45);
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .addButton {
+    justify-content: center;
+  }
+
+  .movieTable {
+    display: block;
+    overflow-x: auto;
+  }
+}

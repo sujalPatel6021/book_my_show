@@ -1,0 +1,289 @@
+.profileContainer {
+  max-width: 800px;
+  margin: 0.5rem auto;
+  padding: 1rem 0 0rem 0;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ffffff, #f5f7fa);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.profileContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  z-index: 0;
+  border-radius: 16px 16px 0 0;
+}
+
+.profileHeader {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.profilePictureContainer {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0rem;
+}
+
+.profilePicture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.profilePicture:hover {
+  transform: scale(1.05);
+}
+
+.verifiedBadge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #4ade80;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 3px solid white;
+}
+
+.adminName {
+  font-size: 2rem;
+  margin: 0.5rem 0 0.2rem;
+  color: #2d3748;
+  font-weight: 700;
+}
+
+.adminRole {
+  font-size: 1.1rem;
+  color: #718096;
+  margin-bottom: 0.5rem;
+}
+
+.adminStatus {
+  display: inline-flex;
+  align-items: center;
+  background: #edf2f7;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.statusIndicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #48bb78;
+  margin-right: 6px;
+}
+
+.profileStats {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 2px 8px 14px rgba(0, 0, 0, 0.1);
+}
+
+.statItem {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 0.3rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.adminInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.infoCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 2px 8px 14px rgba(0, 0, 0, 0.1);
+}
+
+.infoTitle {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #edf2f7;
+  font-size: 0.95rem;
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.infoRow span:first-child {
+  color: #718096;
+  font-weight: 500;
+}
+
+.infoRow span:last-child {
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.permissionTag {
+  background: #ebf8ff;
+  color: #3182ce;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.securityLevel {
+  color: #38a169;
+  font-weight: 600;
+}
+/* Dark Mode - Global & Component Styles */
+:root.dark-theme {
+  background-color: #1a202c;
+}
+
+.profileContainer.darkMode {
+  background: linear-gradient(145deg, #2d3748, #1a202c);
+  color: #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.profileContainer.darkMode::before {
+  background: linear-gradient(135deg, #553c9a 0%, #44337a 100%);
+}
+
+.darkMode .adminName {
+  color: #f0fff4;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.darkMode .adminRole {
+  color: #b2f5ea;
+}
+
+.darkMode .adminStatus {
+  background: #2d3748;
+  color: #81e6d9;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.darkMode .statusIndicator {
+  background: #38b2ac;
+  box-shadow: 0 0 8px #38b2ac;
+}
+
+.darkMode .profileStats {
+  background: rgba(45, 55, 72, 0.7);
+  backdrop-filter: blur(4px);
+  border: 1px solid #4a5568;
+}
+
+.darkMode .statNumber {
+  color: #fefcbf;
+}
+
+.darkMode .statLabel {
+  color: #a0aec0;
+  opacity: 0.8;
+}
+
+.darkMode .infoCard {
+  background: rgba(26, 32, 44, 0.8);
+  border: 1px solid #4a5568;
+}
+
+.darkMode .infoTitle {
+  color: #90cdf4;
+}
+
+.darkMode .infoRow span:first-child {
+  color: #cbd5e0;
+}
+
+.darkMode .infoRow span:last-child {
+  color: #f7fafc;
+}
+
+.darkMode .permissionTag {
+  background: #2b6cb0;
+  color: #ebf8ff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.darkMode .securityLevel {
+  color: #68d391;
+  font-weight: 700;
+}
+
+.darkMode .profilePicture {
+  border: 5px solid #2d3748;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.darkMode .verifiedBadge {
+  background: #38a169;
+  box-shadow: 0 0 10px rgba(56, 161, 105, 0.5);
+}
+
+/* Smooth transition for theme change */
+.profileContainer,
+.profileContainer::before,
+.profileStats,
+.infoCard {
+  transition: all 0.4s ease-out;
+}
+
+.adminName,
+.adminRole,
+.adminStatus,
+.statNumber,
+.statLabel,
+.infoTitle,
+.infoRow span {
+  transition: color 0.3s ease;
+}

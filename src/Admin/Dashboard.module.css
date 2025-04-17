@@ -1,0 +1,515 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 99vw;
+  overflow-x: hidden;
+  /* background-color: #f8fafc; */
+  background-color: #f7f8fa;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 64px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.dashboardWrapper {
+  display: flex;
+  flex: 1;
+  width: 80%;
+  transition: margin-left 0.3s ease;
+  margin-left: 280px;
+  overflow: hidden;
+}
+
+.dashboardWrapper.sidebarClosed {
+  width: 100%;
+  margin-left: 0;
+}
+.dashboardWrapper.sidebarCollapsed {
+  margin-left: 70px;
+  width: 96%;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 90;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.dashboardContent {
+  flex: 1;
+  padding: 2rem;
+  min-height: calc(100vh - 64px);
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.dashboardHeader h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.dashboardSubtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.timeRangeSelector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.timeButton {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timeButton:hover {
+  background: #f1f5f9;
+}
+
+.timeButton.active {
+  background: #7c3aed;
+  color: white;
+  border-color: #7c3aed;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: linear-gradient(145deg, #fffcfc, #d5e8ff);
+  box-shadow: 2px 10px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statCard.primary .statIcon {
+  background-color: #d6cdff;
+  color: #5d00ff;
+}
+
+.statCard.secondary .statIcon {
+  background-color: #bbf5d7;
+  color: #008357;
+}
+
+.statCard.tertiary .statIcon {
+  background-color: #f3e4a6;
+  color: #ffa200;
+}
+
+.statCard.quaternary .statIcon {
+  background-color: #b1c1f7;
+  color: #272af3;
+}
+
+.statLabel {
+  display: block;
+  color: #64748b;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.statValue {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.statTrend {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.chartsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .chartsRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chartContainer {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chartHeader {
+  margin-bottom: 1.5rem;
+}
+
+.chartTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.chartSubtitle {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.chartWrapper {
+  width: 100%;
+  height: 300px;
+}
+
+.customTooltip {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tooltipLabel {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+.tooltipGrid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.5rem;
+}
+
+.tooltipValue {
+  font-weight: 600;
+  text-align: right;
+}
+
+.quickStatsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.quickStat {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.quickStatIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+}
+
+.quickStatLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 0.25rem;
+}
+
+.quickStatValue {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.movieOfTheDay {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.moviePoster {
+  width: 100px;
+  height: 150px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.moviePoster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movieInfo {
+  flex: 1;
+}
+
+.movieInfo h3 {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.movieTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.movieDetails {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.movieStats {
+  display: block;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.activityList {
+  display: grid;
+  gap: 1rem;
+}
+
+.activityItem {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.activityItem:last-child {
+  border-bottom: none;
+}
+
+.activityIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  flex-shrink: 0;
+}
+.sectionHeader {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+.activityText {
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.activityTime {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+.darkMode {
+  background-color: #3d424e;
+  color: #e2e8f0;
+}
+.darkMode .chartContainer,
+.darkMode .statCard,
+.darkMode .quickStat,
+.darkMode .movieOfTheDay {
+  background: linear-gradient(135deg, #1a1a1a, #2c2c2c, #3a3a3a);
+  color: #626365;
+  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+.darkMode h1 {
+  color: rgb(244, 242, 242);
+}
+.darkMode p {
+  color: #a0aec0;
+}
+
+.darkMode .navbar {
+  background-color: #28364e;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.darkMode .sidebar {
+  background-color: #2d3748;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+.darkMode .quickStatLabel,
+.darkMode .quickStatValue {
+  color: #c1c5c9;
+}
+.darkMode h3 {
+  color: white;
+}
+
+.darkMode .statValue,
+.darkMode .chartTitle,
+.darkMode .movieTitle,
+.darkMode .activityText {
+  color: #cccaca;
+}
+
+.darkMode .statLabel,
+.darkMode .statTrend,
+.darkMode .chartSubtitle,
+.darkMode .movieDetails,
+.darkMode .movieStats,
+.darkMode .activityTime {
+  color: #dfdfdf;
+}
+
+.darkMode .timeButton {
+  background-color: #4a5568;
+  color: #e2e8f0;
+  border-color: #4a5568;
+}
+
+.darkMode .timeButton:hover {
+  background-color: #2d3748;
+}
+
+.darkMode .timeButton.active {
+  background-color: #7c3aed;
+  color: white;
+}
+
+.darkMode .activityIcon,
+.darkMode .quickStatIcon {
+  background-color: #4a5568;
+  color: #e2e8f0;
+}
+.darkMode .sectionTitle {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .dashboardContent {
+    padding: 1rem;
+  }
+
+  .dashboardWrapper {
+    margin-left: 0;
+  }
+
+  .dashboardWrapper.sidebarOpen {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quickStatsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .timeRangeSelector {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .timeButton {
+    flex: 1;
+    text-align: center;
+  }
+}

@@ -1,0 +1,677 @@
+.headdiv {
+  color: white;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.maindiv {
+  background-color: #181818;
+  display: flex;
+  justify-content: center;
+  padding: 40px 80px;
+  height: 450px;
+}
+
+.photodiv {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+}
+
+.posterContainer {
+  position: relative;
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.poster {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.inCinemas {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 5px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.contentdiv {
+  margin-left: 40px;
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+  background-color: rgb(11, 11, 11);
+  border-radius: 10px;
+  width: 55%;
+  height: 70px;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.starIcon {
+  color: #ffcc00;
+  font-size: 24px;
+}
+
+.rating {
+  font-size: 15px !important;
+  width: 400px;
+}
+
+.rateButton {
+  width: 200px;
+  height: 40px;
+  background-color: #ffffff;
+  border: none;
+  margin-left: 60px;
+  padding: 8px 16px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.rateButton:hover {
+  background-color: #d31e1e;
+  color: white;
+  transition: 0.5s all ease-in-out;
+}
+
+.tags {
+  margin-top: 15px;
+}
+
+.tag {
+  background: #444;
+  padding: 6px 12px;
+  margin-right: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.details {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+  color: #ffffff;
+}
+
+.details p {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.bookButton {
+  background-color: #e50814;
+  color: white;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.bookButton:hover {
+  background-color: #9f0a11;
+  transition: 0.5s all ease-in-out;
+}
+
+.shareButton {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(6, 6, 6, 0.2);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.shareButton:hover {
+  background: rgba(10, 10, 10, 0.4);
+}
+
+.shareIcon {
+  font-size: 20px;
+}
+
+.about {
+  box-sizing: border-box;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  margin: 40px 0 0 150px;
+}
+
+.abouttitle {
+  color: black;
+  font-size: 22px;
+}
+.aboutcontent {
+  color: black;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 20px 0 0 0;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.horizontalLine {
+  color: black;
+  background-color: rgb(0, 0, 0);
+  width: 60%;
+  margin: 0 0 0 150px;
+}
+
+.castmain {
+  width: 50%;
+  margin: 40px 0 0 150px;
+  position: relative;
+}
+
+.casttitle {
+  color: black;
+  font-size: 23px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.castwrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.castcontainer {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+  width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.castcard {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 120px;
+}
+
+.castimage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.castname {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.castposition {
+  color: black;
+  font-size: 12px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.scrollButtonLeft,
+.scrollButtonRight {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.scrollButtonLeft {
+  left: -20px;
+}
+
+.scrollButtonRight {
+  right: -20px;
+}
+
+.scrollButtonLeft:hover,
+.scrollButtonRight:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.crewmain {
+  width: 50%;
+  margin: 40px 0 0 150px;
+  position: relative;
+}
+
+.crewtitle {
+  color: black;
+  font-size: 23px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.crewwrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.crewcontainer {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+  width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.crewcard {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 120px;
+}
+
+.crewimage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.crewname {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.crewposition {
+  color: black;
+  font-size: 12px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.scrollButtonLeft,
+.scrollButtonRight {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.scrollButtonLeft {
+  left: -20px;
+}
+
+.scrollButtonRight {
+  right: -20px;
+}
+
+.scrollButtonLeft:hover,
+.scrollButtonRight:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.umightlike {
+  color: black;
+  margin: 40px 0 0 20px;
+  display: flex;
+  align-items: flex-start;
+}
+@media (max-width: 767px) {
+  .inCinemas {
+    width: 100%;
+    height: 25px;
+  }
+  .maindiv {
+    padding: 15px;
+    height: auto;
+    background-position: center;
+  }
+
+  .photodiv {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px;
+    background-image: linear-gradient(
+      180deg,
+      rgba(26, 26, 26, 0.9) 0%,
+      rgba(26, 26, 26, 0.8) 50%,
+      rgba(26, 26, 26, 0.7) 100%
+    ) !important;
+    text-align: center;
+  }
+
+  .posterContainer {
+    width: 180px;
+    margin-bottom: 25px;
+  }
+
+  .contentdiv {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .ratingContainer {
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    height: auto;
+    gap: 10px;
+    background-color: rgba(11, 11, 11, 0.8);
+  }
+
+  .starIcon {
+    font-size: 20px;
+  }
+
+  .rating {
+    font-size: 14px !important;
+    width: 100%;
+    text-align: center;
+  }
+
+  .rateButton {
+    width: 100%;
+    margin: 0;
+    padding: 8px;
+  }
+
+  .tags {
+    justify-content: center;
+    margin: 15px 0;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .details {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px 10px;
+    font-size: 14px;
+  }
+
+  .details p {
+    font-size: 14px;
+  }
+
+  .bookButton {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .shareButton {
+    position: relative;
+    margin: 20px auto 0;
+    right: auto;
+    top: auto;
+  }
+
+  .about,
+  .castmain,
+  .crewmain {
+    width: calc(100% - 30px);
+    margin: 30px 15px;
+    padding: 0;
+    height: auto;
+  }
+
+  .abouttitle,
+  .casttitle,
+  .crewtitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .casttitle {
+    margin-top: 10px;
+  }
+
+  .aboutcontent {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .horizontalLine {
+    width: calc(100% - 30px);
+    margin: 0 auto;
+    opacity: 0.2;
+  }
+
+  .castcontainer,
+  .crewcontainer {
+    gap: 15px;
+    padding-bottom: 15px;
+  }
+
+  .castcard,
+  .crewcard {
+    width: 100px;
+  }
+
+  .castimage,
+  .crewimage {
+    width: 70px;
+    height: 70px;
+  }
+
+  .castname,
+  .crewname {
+    font-size: 12px;
+  }
+
+  .castposition,
+  .crewposition {
+    font-size: 11px;
+  }
+
+  .scrollButtonLeft,
+  .scrollButtonRight {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .scrollButtonLeft {
+    left: -10px;
+  }
+
+  .scrollButtonRight {
+    right: -10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .maindiv {
+    padding: 25px;
+    height: 400px;
+  }
+
+  .photodiv {
+    padding: 30px;
+  }
+
+  .posterContainer {
+    width: 220px;
+  }
+
+  .contentdiv {
+    margin-left: 30px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .ratingContainer {
+    width: 90%;
+    padding: 0 25px;
+  }
+
+  .rateButton {
+    width: 150px;
+    margin-left: 30px;
+  }
+
+  .about,
+  .castmain,
+  .crewmain {
+    width: 85%;
+    margin: 35px auto;
+  }
+
+  .horizontalLine {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .castcard,
+  .crewcard {
+    width: 110px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .maindiv {
+    padding: 40px 80px;
+  }
+
+  .photodiv {
+    max-width: 1200px;
+  }
+
+  .ratingContainer {
+    width: 70%;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .photodiv {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .posterContainer {
+    width: 150px;
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+
+  .contentdiv {
+    margin-left: 0;
+  }
+
+  .ratingContainer {
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .rateButton {
+    width: auto;
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .posterContainer {
+    width: 150px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .castcard,
+  .crewcard {
+    width: 85px;
+  }
+
+  .castimage,
+  .crewimage {
+    width: 60px;
+    height: 60px;
+  }
+}

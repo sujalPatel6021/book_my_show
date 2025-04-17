@@ -1,0 +1,70 @@
+.movieListContainer {
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.sliderContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
+}
+
+.movieSlider {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+.movieSlider:hover {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 40px;
+  height: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 30px 0;
+}
+
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.5);
+  color: rgb(9, 9, 9);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.prevButton {
+  left: 30px;
+  top: 150px;
+  width: 20px;
+}
+
+.nextButton {
+  right: 30px;
+  top: 150px;
+  width: 20px;
+}
+
+.prevButton:hover,
+.nextButton:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,418 @@
+:root {
+  --primary: #ff4757;
+  --primary-dark: #e84118;
+  --secondary: #2f3542;
+  --light: #f1f2f6;
+  --dark: #2f3542;
+  --gray: #a4b0be;
+  --success: #2ed573;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 1rem;
+  color: var(--dark);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.movieContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+}
+
+.posterContainer {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.moviePoster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.posterContainer:hover .moviePoster {
+  transform: scale(1.05);
+}
+
+.gradientOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.backButton {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--dark);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.backButton:hover {
+  background-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Movie Details */
+.movieDetails {
+  padding: 0 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.movieHeader {
+  margin-bottom: 1rem;
+}
+
+.movieHeader h1 {
+  font-size: 1.5rem;
+  margin: 0 0 0.3rem;
+  color: var(--dark);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.metaInfo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.language {
+  background-color: var(--light);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.premiereBadge {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.synopsis h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.synopsis h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+}
+
+.synopsis p {
+  line-height: 1.5;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.bookingInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  margin: 0.5rem 0;
+}
+
+.infoCard {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  padding: 0.8rem;
+  background: var(--light);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.infoIcon {
+  font-size: 1rem;
+  background: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.infoCard h3 {
+  margin: 0 0 0.2rem;
+  color: var(--dark);
+  font-size: 0.9rem;
+}
+
+.infoCard p {
+  margin: 0;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.bookButton {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 10px rgba(255, 71, 87, 0.4);
+  position: sticky;
+  bottom: 1rem;
+  align-self: center;
+}
+
+.bookButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 71, 87, 0.5);
+}
+
+.bookButton:active {
+  transform: translateY(0);
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.popupContent {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  width: 90%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--gray);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.popupHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.popupHeader h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0.3rem;
+  color: var(--dark);
+}
+
+.popupSubtitle {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.counterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.counterButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  background-color: white;
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.counterButton:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.counterButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.priceContainer {
+  text-align: center;
+}
+
+.ticketCount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  min-width: 40px;
+  text-align: center;
+}
+
+.confirmButton {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.confirmButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(255, 71, 87, 0.4);
+}
+
+@media (min-width: 768px) {
+  .movieContainer {
+    flex-direction: row;
+    height: auto;
+    max-height: 80vh;
+  }
+
+  .posterContainer {
+    width: 250px;
+    height: auto;
+  }
+
+  .movieDetails {
+    padding: 1.5rem;
+  }
+
+  .movieHeader h1 {
+    font-size: 2rem;
+  }
+
+  .bookingInfo {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .movieHeader h1 {
+    font-size: 1.5rem;
+  }
+  .moviePoster {
+    height: 350px;
+    width: 250px;
+    box-sizing: border-box;
+  }
+  .movieContainer {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  .posterContainer {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .bookButton {
+    bottom: 3.5rem;
+  }
+}

@@ -1,0 +1,606 @@
+.maindiv {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.div1 {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.pname {
+  color: rgb(74, 72, 72);
+  font-size: 30px;
+}
+
+.pdata {
+  font-size: 12px;
+  border: 1px solid rgb(77, 75, 75);
+  color: rgb(74, 72, 72);
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 100px;
+}
+
+.datediv {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+.date {
+  width: 80%;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.datebox {
+  border: none;
+  border-radius: 5px;
+  height: 100%;
+  width: 50px;
+  background-color: white;
+  color: rgb(87, 84, 84);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.datebox:hover {
+  color: white;
+  background-color: rgb(230, 57, 57);
+  cursor: pointer;
+}
+
+.selected {
+  color: white;
+  background-color: rgb(230, 57, 57);
+  transition: 0.2s all ease-out;
+  border-radius: 5px;
+}
+.boxp1 {
+  font-size: 10px;
+}
+.box2 {
+  font-size: 20px;
+}
+.boxp3 {
+  font-size: 10px;
+}
+.language {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid red;
+  margin-bottom: 0.2px;
+  cursor: pointer;
+}
+
+.pricerange {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+.search {
+  width: 10%;
+}
+.languagep {
+  font-size: 15px;
+  font-weight: 100;
+  color: rgb(36, 36, 36);
+}
+.range {
+  font-size: 15px;
+  font-weight: 100;
+  color: rgb(36, 36, 36);
+}
+.hr1 {
+  box-shadow: inset;
+}
+.sliderContainer {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 200px;
+  padding: 20px;
+}
+
+.sliderValues {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 14px;
+  color: rgb(36, 36, 36);
+}
+
+.rc-slider {
+  margin-top: 10px;
+}
+
+.rc-slider-track {
+  background-color: rgb(230, 57, 57);
+}
+
+.rc-slider-handle {
+  border-color: rgb(230, 57, 57);
+}
+
+.rc-slider-handle:active {
+  box-shadow: 0 0 5px rgb(230, 57, 57);
+}
+.arrow {
+  margin-left: 10px;
+  font-size: 14px;
+  color: rgb(36, 36, 36);
+}
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 35px;
+}
+.ininfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.infop {
+  font-size: 15px;
+  display: flex;
+  color: rgb(61, 58, 58);
+  justify-content: center;
+  align-items: center;
+}
+.p1 {
+  font-size: 12px;
+}
+.p2 {
+  font-size: 12px;
+}
+.subtitleimg {
+  height: 20px;
+}
+.dot1 {
+  font-size: 10px;
+  color: rgb(0, 255, 51);
+}
+.dot2 {
+  font-size: 10px;
+  color: red;
+}
+.buttoncontainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: 2px solid #4caf50;
+  background-color: #f5fdf5;
+  border-radius: 10px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 20px 20px;
+}
+.timebutton {
+  padding: 10px 20px;
+  border: 2px solid #4caf50;
+  background-color: #f5fdf5;
+  border-radius: 10px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 3px;
+}
+.timebutton:hover {
+  background-color: white;
+  color: white;
+}
+.label {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.timetext {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.divmain {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: rgb(221, 221, 221);
+  padding: 20px 0;
+}
+.theatre {
+  border-radius: 20px;
+  background-color: white;
+  width: 80%;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.div2 {
+  padding: 10px 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.div2p1 {
+  font-size: 25px;
+  font-weight: bold;
+}
+.div2p2 {
+  font-size: 15px;
+  font-weight: 100;
+}
+.div2p3 {
+  font-size: 15px;
+  font-weight: 100;
+}
+.mticket {
+  height: 47px;
+  padding: 10px;
+}
+.seatPopupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.seatPopup {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.seatNumbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.seatNumberButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+.seatNumberButton:hover {
+  background: #f0f0f0;
+}
+
+.popupHr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.seatTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.seatTable th,
+.seatTable td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.seatTable th {
+  font-weight: bold;
+}
+
+.bookButton {
+  background: #a41b1b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.bookButton:hover {
+  background: #8a1616;
+}
+
+.closePopupButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.selectedSeat {
+  background-color: #a41b1b;
+  color: white;
+  border-color: #a41b1b;
+}
+.bookLink {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+@media (max-width: 767px) {
+  .maindiv {
+    height: auto;
+    padding: 15px 0;
+  }
+  .mticket {
+    height: 25px;
+    padding: 0px;
+    margin: 0;
+  }
+  .mticket:nth-child(2) {
+    padding-left: 10px;
+  }
+
+  .div1 {
+    width: 90%;
+    padding: 0 15px;
+  }
+
+  .pname {
+    font-size: 22px;
+  }
+
+  .pdata {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .datediv {
+    height: auto;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .date {
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px 5px;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .datebox {
+    min-width: 45px;
+    height: 55px;
+    flex-shrink: 0;
+  }
+
+  .language,
+  .pricerange {
+    width: 100%;
+    padding: 15px;
+    justify-content: center;
+    border-bottom: none;
+  }
+
+  .language {
+    border-bottom: 3px solid red;
+  }
+
+  .sliderContainer {
+    width: 90%;
+    left: 5%;
+    right: auto;
+  }
+
+  .info {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .infop {
+    font-size: 13px;
+  }
+
+  .divmain {
+    padding: 15px 0;
+  }
+
+  .theatre {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .div2 {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .div2p1 {
+    font-size: 20px;
+  }
+
+  .div2p2,
+  .div2p3 {
+    font-size: 14px;
+  }
+
+  .buttoncontainer {
+    margin: 15px 0;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .timebuttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    width: 100%;
+  }
+
+  .timebutton {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .timetext {
+    font-size: 16px;
+  }
+
+  .seatPopup {
+    width: 90%;
+    max-width: 350px;
+    padding: 15px;
+  }
+
+  .seatNumbers {
+    gap: 8px;
+  }
+
+  .seatNumberButton {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .div1 {
+    width: 90%;
+  }
+
+  .pname {
+    font-size: 26px;
+  }
+
+  .date {
+    width: 70%;
+  }
+
+  .language,
+  .pricerange {
+    width: 15%;
+  }
+
+  .theatre {
+    width: 90%;
+  }
+
+  .div2 {
+    padding: 10px 30px;
+  }
+
+  .timebuttons {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .pname {
+    font-size: 20px;
+  }
+
+  .datebox {
+    min-width: 40px;
+    height: 50px;
+  }
+
+  .boxp1,
+  .boxp3 {
+    font-size: 9px;
+  }
+
+  .boxp2 {
+    font-size: 16px;
+  }
+
+  .timebuttons {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  }
+
+  .seatPopup {
+    width: 95%;
+  }
+
+  .seatNumberButton {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .datediv {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .date {
+    order: 1;
+    width: 100%;
+  }
+
+  .language {
+    order: 2;
+    width: 50%;
+  }
+
+  .pricerange {
+    order: 3;
+    width: 50%;
+  }
+
+  .timebuttons {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+}

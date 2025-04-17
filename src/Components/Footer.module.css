@@ -1,0 +1,300 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.main {
+  height: auto;
+  margin-top: 20px;
+}
+.div1 {
+  background-color: rgb(49, 48, 53);
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.p1 {
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+}
+.p2 {
+  font-weight: 100;
+  font-size: 17px;
+  color: white;
+  margin-left: 20px;
+}
+.contacttoday {
+  margin: 0 0 0 150px;
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.div2 {
+  height: 120px;
+  color: rgb(153, 153, 153);
+  background-color: rgb(74, 73, 78);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logodiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.logodiv:hover {
+  color: white;
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+}
+
+.supporticon {
+  font-size: 60px !important;
+}
+
+.ticketicon {
+  font-size: 60px;
+}
+
+.papericon {
+  font-size: 60px;
+}
+
+.customercare,
+.resend,
+.subscribe {
+  font-size: 15px;
+}
+
+.footermain {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(59, 58, 61);
+  color: white;
+}
+.footersecond {
+  margin: 10px 150px;
+}
+.divbox {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.divp {
+  font-size: 12px;
+  font-weight: 100;
+  color: rgb(171, 165, 165);
+}
+.divp:hover {
+  color: white;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+  text-decoration: underline;
+}
+.divl {
+  font-size: 12px;
+  font-weight: 100;
+  color: rgb(171, 165, 165);
+}
+.activites {
+  font-size: 15px;
+  font-weight: 100;
+  color: rgb(171, 165, 165);
+}
+
+.divcontentmain {
+  font-size: 12px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+}
+
+.hr {
+  width: 50%;
+  border-color: rgb(171, 165, 165);
+  overflow: hidden;
+  height: 0.2px;
+  box-sizing: border-box;
+}
+
+.hrlogo {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: rgb(59, 58, 61);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.socialdiv {
+  height: 90px;
+  color: rgb(171, 165, 165);
+  background-color: rgb(59, 58, 61);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  gap: 20px;
+}
+
+.logoicon:hover {
+  cursor: pointer;
+  color: white;
+  transition: 0.4s all ease-in-out;
+  border-radius: 100%;
+}
+
+.copyrightdiv {
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(59, 58, 61);
+}
+.copy {
+  font-size: 10px;
+  color: rgb(171, 165, 165);
+}
+@media (max-width: 1024px) {
+  .div1 {
+    height: auto;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
+  .p1,
+  .p2 {
+    margin-left: 0;
+  }
+
+  .contacttoday {
+    margin: 10px 0 0 0;
+  }
+
+  .div2 {
+    height: auto;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footersecond {
+    margin: 10px 50px;
+  }
+
+  .divbox {
+    flex-wrap: wrap;
+    gap: 8px;
+    row-gap: 5px;
+  }
+
+  .divcontentmain {
+    margin-bottom: 15px;
+    font-size: 12px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+}
+
+@media (max-width: 767px) {
+  .div1 {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .p1 {
+    font-size: 18px;
+  }
+
+  .p2 {
+    font-size: 15px;
+    margin: 10px 0;
+  }
+
+  .div2 {
+    flex-direction: column;
+    padding: 15px;
+    gap: 30px;
+  }
+
+  .footersecond {
+    margin: 10px 20px;
+  }
+
+  .divbox {
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .hrlogo {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .hr {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .socialdiv {
+    font-size: 20px;
+    gap: 15px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .p1 {
+    font-size: 16px;
+  }
+
+  .p2 {
+    font-size: 14px;
+  }
+
+  .contacttoday {
+    width: 130px;
+    font-size: 14px;
+  }
+
+  .supporticon,
+  .ticketicon,
+  .papericon {
+    font-size: 50px !important;
+  }
+
+  .customercare,
+  .resend,
+  .subscribe {
+    font-size: 14px;
+  }
+
+  .activites {
+    font-size: 16px;
+    padding-bottom: 5px;
+  }
+
+  .divp {
+    font-size: 11px;
+  }
+}

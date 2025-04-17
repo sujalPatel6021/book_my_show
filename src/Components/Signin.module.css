@@ -1,0 +1,193 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  padding: 30px 25px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #e57070;
+  padding: 5px;
+  line-height: 1;
+}
+
+.signinhead {
+  color: #333;
+  margin: 0 0 25px;
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.primaryButton,
+.socialButton,
+.submitButton {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.primaryButton,
+.submitButton {
+  background: #f84464;
+  color: white;
+  border: none;
+}
+
+.primaryButton:hover,
+.submitButton:hover {
+  background: #e63353;
+}
+
+.socialButton {
+  background: white;
+  color: #333;
+  border: 1px solid #d1d1d1;
+}
+
+.socialButton:hover {
+  background: #f9f9f9;
+}
+
+.socialIcon {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+}
+
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.orSeparator {
+  display: flex;
+  align-items: center;
+  color: #777;
+  font-size: clamp(0.8rem, 3vw, 0.9rem);
+  margin: 5px 0;
+}
+
+.orSeparator::before,
+.orSeparator::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+  margin: 0 10px;
+}
+
+.phoneInputContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.countryCode {
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  padding: 0 12px;
+  color: #333;
+  border-right: 1px solid #d1d1d1;
+  background: #f9f9f9;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.phoneInput {
+  border: none;
+  padding: 14px 12px;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  width: 100%;
+  outline: none;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  color: #585858;
+  cursor: pointer;
+  padding: 5px 0;
+  font-size: clamp(0.8rem, 3vw, 0.9rem);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.backButton:hover {
+  color: #333;
+}
+
+.emailForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.inputField {
+  padding: 14px 12px;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pmain {
+  color: #777;
+  font-size: clamp(0.7rem, 3vw, 0.8rem);
+  margin-top: 15px;
+  line-height: 1.4;
+}
+
+.pmain a {
+  color: #777;
+  text-decoration: underline;
+}
