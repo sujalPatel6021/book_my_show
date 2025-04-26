@@ -9,6 +9,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import Footer from "../Components/Footer";
+import Signin from "./Signin";
 
 const theatre = [
   {
@@ -129,7 +130,19 @@ export default function BookTicketPage() {
   const [selectedDate, setSelectedDate] = useState(dates[0].date);
   const [showSlider, setShowSlider] = useState(false);
   const [priceRange, setPriceRange] = useState([100, 500]);
+  const [isSignInOpen, setSignInOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    return localStorage.getItem("isLoggedIn") === "true";
+  });
 
+  const handleTimeButtonClick = (time) => {
+    if (!isLoggedIn) {
+      setSignInOpen(true);
+      return;
+    }
+    setSelectedTime(time);
+    setShowSeatPopup(true);
+  };
   const handleDateClick = (date) => {
     setSelectedDate(date);
   };
@@ -260,10 +273,7 @@ export default function BookTicketPage() {
                   return (
                     <button
                       className={styles.timebutton}
-                      onClick={() => {
-                        setSelectedTime(time);
-                        setShowSeatPopup(true);
-                      }}
+                      onClick={() => handleTimeButtonClick(time)}
                     >
                       <span className={styles.timetext}>{time}</span>
                     </button>
@@ -271,6 +281,15 @@ export default function BookTicketPage() {
                 })}
               </div>
             </div>
+            <Signin
+              isOpen={isSignInOpen}
+              onClose={() => setSignInOpen(false)}
+              onSignInSuccess={() => {
+                setIsLoggedIn(true);
+                localStorage.setItem("isLoggedIn", "true");
+                setSignInOpen(false);
+              }}
+            />
           </div>
         ))}
       </div>

@@ -2,20 +2,30 @@ import React, { useState } from "react";
 import styles from "./Navbar.module.css";
 import Signin from "./Signin";
 import { Link } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa"; // Import a profile icon
+import { FaUserCircle } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState("Select City");
   const [isSignInOpen, setSignInOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    return localStorage.getItem("isLoggedIn") === "true";
+  });
+  const [isProfileDropdownOpen, setProfileDropdownOpen] = useState(false);
 
   const handleSelectCity = (city) => {
     setSelectedCity(city);
     setIsOpen(false);
   };
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    localStorage.removeItem("isLoggedIn");
+    setProfileDropdownOpen(false);
+  };
+
   return (
-    <div className={styles.navbar}>
+    <div className={`${styles.navbar} ${isLoggedIn ? styles.isLoggedIn : ""}`}>
       <div className={styles.div1}>
         <Link to="/">
           <img
@@ -38,7 +48,7 @@ export default function Navbar() {
           onMouseEnter={() => setIsOpen(true)}
           onMouseLeave={() => setIsOpen(false)}
         >
-          <button className={styles.dropdownBtn}> {selectedCity} ▾</button>
+          <button className={styles.dropdownBtn}>{selectedCity} ▾</button>
           {isOpen && (
             <ul className={styles.dropdownMenu}>
               {["Mumbai", "Delhi", "Bangalore", "Hyderabad", "Ahmedabad"].map(
@@ -55,17 +65,41 @@ export default function Navbar() {
             </ul>
           )}
         </div>
-        <button
-          onClick={() => setSignInOpen(true)}
-          className={styles.signinbutton}
-        >
-          Sign In
-        </button>
-        <FaUserCircle
-          className={styles.profileIcon}
-          onClick={() => setSignInOpen(true)}
+
+        {isLoggedIn ? (
+          <div
+            className={styles.profileDropdown}
+            onMouseEnter={() => setProfileDropdownOpen(true)}
+            onMouseLeave={() => setProfileDropdownOpen(false)}
+          >
+            <FaUserCircle className={styles.profileIcon} />
+            {isProfileDropdownOpen && (
+              <ul className={styles.profileDropdownMenu}>
+                <li className={styles.dropdownItem}>Profile</li>
+                <li className={styles.dropdownItem} onClick={handleLogout}>
+                  Logout
+                </li>
+              </ul>
+            )}
+          </div>
+        ) : (
+          <button
+            onClick={() => setSignInOpen(true)}
+            className={styles.signinbutton}
+          >
+            Sign In
+          </button>
+        )}
+
+        <Signin
+          isOpen={isSignInOpen}
+          onClose={() => setSignInOpen(false)}
+          onSignInSuccess={() => {
+            setIsLoggedIn(true);
+            localStorage.setItem("isLoggedIn", "true");
+            setSignInOpen(false);
+          }}
         />
-        <Signin isOpen={isSignInOpen} onClose={() => setSignInOpen(false)} />
       </div>
     </div>
   );

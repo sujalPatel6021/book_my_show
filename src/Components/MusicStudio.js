@@ -46,7 +46,7 @@ const events = [
     type: "Event",
   },
   {
-    img: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:l-image,i-discovery-catalog@@icons@@bms_premiere_v1.png,t-false,lfo-bottom_left,l-end/et00404965-nassmyykdq-portrait.jpg",
+    img: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-RnJpLCAxNCBNYXI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00433637-cdmbsgkkys-portrait.jpg",
     title: "Idiyan Chandu Live  - Ahmedabad",
     location: "Savaana Party Lawn : Ahmedabad",
     type: "Concert",

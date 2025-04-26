@@ -1,373 +1,150 @@
-.paymentContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.checkoutBackground {
   min-height: 100vh;
-  background-color: #f5f5f7;
-  padding: 20px;
-}
-
-.paymentBox {
+  background: linear-gradient(120deg, #f1f0fb 0%, #e5deff 100%);
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkoutCard {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 28px #9b87f523;
+  padding: 2.5rem 2rem;
   max-width: 850px;
   width: 100%;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.movieSidebar {
-  width: 300px;
-  background-color: #f8f9fa;
-  padding: 25px;
-  border-right: 1px solid #e0e0e0;
-}
-
-.sidebarHeader {
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 18px;
-}
-
-.movieInfo {
-  margin-bottom: 30px;
-}
-.moviediv {
   display: flex;
-  height: 100px;
-  width: 100%;
+  flex-direction: column;
+  gap: 2rem;
 }
-.movieimage {
-  width: 70px;
-  height: 90px;
-  margin: 10px;
+.header {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #6e59a5;
+  margin-bottom: 0.2em;
 }
-.movieinfodiv {
-  margin: 10px;
-}
-.movieTitle {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0 0 10px 0;
-  color: #222;
-}
-
-.movieDetail {
-  font-size: 14px;
-  margin: 8px 0;
-  color: #555;
-}
-
-.seatsContainer {
-  margin-top: 15px;
-  padding: 8px 12px;
-  background-color: #f0f7ff;
-  border-radius: 5px;
-  display: inline-block;
-  color: #1976d2;
-  font-size: 14px;
-}
-
-.contentArea {
-  flex: 1;
-  padding: 30px;
-}
-
-.paymentHeader {
-  margin-top: 0;
-  margin-bottom: 25px;
-  color: #333;
-  font-size: 18px;
-}
-
-.paymentMethods {
+.flexRow {
   display: flex;
-  gap: 15px;
-  margin-bottom: 25px;
+  flex-direction: column;
+  gap: 2rem;
 }
-
-.paymentMethodButton {
-  flex: 1;
-  padding: 12px;
-  background: none;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-size: 14px;
-  color: #555;
+@media (min-width: 768px) {
+  .flexRow {
+    flex-direction: row;
+  }
 }
-
-.paymentMethodButton:hover {
-  background-color: #e9ecef;
-}
-
-.paymentMethodButton.active {
-  background-color: #e3f2fd;
-  color: #1976d2;
-  font-weight: bold;
-  border-color: #1976d2;
-}
-
-.paymentForm {
-  margin-bottom: 25px;
-}
-
-.formGroup {
-  margin-bottom: 20px;
-}
-
-.formGroup label {
-  display: block;
-  margin-bottom: 8px;
-  color: #555;
-  font-size: 14px;
-}
-
-.formGroup input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.formRow {
-  display: flex;
-  gap: 15px;
-}
-
-.formRow .formGroup {
-  flex: 1;
-}
-
-.upiNote {
-  color: #666;
-  font-size: 13px;
-  margin-top: 10px;
-}
-
-.priceSummary {
-  margin-top: 30px;
-}
-
-.priceRow {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-  color: #555;
-  font-size: 14px;
-}
-
-.totalRow {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid #eee;
-  font-weight: bold;
-  color: #222;
-  font-size: 16px;
-}
-
-.payButton {
-  width: 100%;
-  padding: 15px;
-  background-color: #ff5722;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.payButton:hover {
-  background-color: #e64a19;
-}
-/* Success Animation Styles */
-.successAnimation {
+.posterSection {
+  min-width: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  max-width: 500px;
-  margin: 0 auto;
+  gap: 0.88rem;
+  background: #faf9ff;
+  padding: 1.2rem 1rem 1rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 3px 18px #9b87f523;
 }
-
-.checkmark {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  display: block;
-  stroke-width: 2;
-  stroke: #4bb71b;
-  stroke-miterlimit: 10;
-  margin: 0 auto;
-  box-shadow: 0 0 0 rgba(75, 183, 27, 0.4);
-  animation: fill 0.4s ease-in-out 0.4s forwards,
-    scale 0.3s ease-in-out 0.9s both;
+.poster {
+  border-radius: 12px;
+  width: 150px;
+  height: 210px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px #bbb5e4;
 }
-
-.checkmarkCircle {
-  stroke-dasharray: 166;
-  stroke-dashoffset: 166;
-  stroke-width: 2;
-  stroke-miterlimit: 10;
-  stroke: #4bb71b;
-  fill: none;
-  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+.movieTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #6e59a5;
 }
-
-.checkmarkCheck {
-  transform-origin: 50% 50%;
-  stroke-dasharray: 48;
-  stroke-dashoffset: 48;
-  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+.movieInfo {
+  color: #6e59a5;
+  font-size: 0.95rem;
 }
-
-@keyframes stroke {
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes scale {
-  0%,
-  100% {
-    transform: none;
-  }
-  50% {
-    transform: scale3d(1.1, 1.1, 1);
-  }
-}
-
-@keyframes fill {
-  100% {
-    box-shadow: inset 0 0 0 100px rgba(75, 183, 27, 0);
-  }
-}
-
-.successTitle {
-  color: #4bb71b;
-  margin: 1rem 0 0.5rem;
-  font-size: 1.8rem;
-}
-
-.successMessage {
-  color: #666;
-  margin-bottom: 2rem;
-}
-
-.bookingSummary {
-  text-align: left;
-  margin-top: 2rem;
-  padding: 1rem;
-  background: #f8f8f8;
+.seatBox {
+  background: #e5deff;
+  color: #403e43;
   border-radius: 8px;
+  padding: 0.37rem 0.8rem;
+  margin-top: 0.5em;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.summarySection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.summaryBox {
+  background: #f6f6f7;
+  border-radius: 16px;
+  padding: 1.2rem 1.5rem 1rem 1.5rem;
+  box-shadow: 0 2px 12px #eae7f7a0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.summaryRow,
+.summaryRowTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+.summaryRowTotal {
+  font-weight: bold;
+  color: #6e59a5;
+  font-size: 1.13rem;
+  border-top: 2px solid #eee;
+  margin-top: 0.8em;
+  padding-top: 0.6em;
+}
+.smallText {
+  color: #8e9196;
+  font-size: 0.93em;
+}
+.form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.input {
   width: 100%;
+  padding: 0.7em 1.1em;
+  border: 1px solid #dedbf1;
+  border-radius: 8px;
+  background: #f3f3f3;
+  margin-top: 0.4em;
+  font-size: 1rem;
+  transition: box-shadow 0.2s;
 }
-
-.bookingSummary p {
-  margin: 0.5rem 0;
+.input:focus {
+  outline: none;
+  border-color: #9b87f5;
+  box-shadow: 0 0 0 2px #9b87f544;
 }
-
-.processingText {
-  display: inline-block;
+.payBtn {
+  margin-top: 6px;
+  background: #9b87f5;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  padding: 0.75em 0;
+  cursor: pointer;
+  box-shadow: 0 2px 6px #9b87f539;
+  transition: background 0.14s;
 }
-
-.payButton:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
+.payBtn:hover {
+  background: #8b5cf6;
 }
-@media (max-width: 768px) {
-  .paymentBox {
-    flex-direction: column;
-    max-width: 100%;
-  }
-
-  .movieSidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #e0e0e0;
-    padding: 20px;
-  }
-
-  .contentArea {
-    padding: 20px;
-  }
-
-  .moviediv {
-    height: auto;
-    align-items: center;
-  }
-
-  .movieimage {
-    width: 60px;
-    height: 80px;
-    margin: 5px;
-  }
-
-  .movieinfodiv {
-    margin: 5px;
-  }
-
-  .paymentMethods {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .formRow {
-    flex-direction: column;
-    gap: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .paymentContainer {
-    padding: 10px;
-  }
-
-  .movieTitle {
-    font-size: 14px;
-  }
-
-  .movieDetail {
-    font-size: 12px;
-    margin: 5px 0;
-  }
-
-  .seatsContainer {
-    font-size: 12px;
-    padding: 5px 8px;
-  }
-
-  .sidebarHeader,
-  .paymentHeader {
-    font-size: 16px;
-    margin-bottom: 15px;
-  }
-
-  .priceRow,
-  .totalRow {
-    font-size: 13px;
-  }
-
-  .totalRow {
-    font-size: 14px;
-  }
-
-  .formGroup input {
-    padding: 10px;
-  }
-
-  .payButton {
-    padding: 12px;
-    font-size: 14px;
-  }
+.successBox {
+  background: #f2fce2;
+  padding: 1.2em 1em;
+  border-radius: 12px;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
 }

@@ -151,7 +151,9 @@
   font-size: 25px;
   gap: 20px;
 }
-
+.logoicon {
+  color: rgb(171, 165, 165);
+}
 .logoicon:hover {
   cursor: pointer;
   color: white;

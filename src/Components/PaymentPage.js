@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import styles from "./PaymentPage.module.css";
 import { useLocation } from "react-router-dom";
+const MOVIE = {
+  hall: "Cinema 4 - Dolby",
+};
 
-const MoviePaymentBox = () => {
+export default function CheckoutPage() {
   const location = useLocation();
   const {
     movieName,
@@ -18,18 +21,6 @@ const MoviePaymentBox = () => {
     perticket,
     totalprice,
   } = location.state || {};
-
-  const [paymentMethod, setPaymentMethod] = useState("card");
-  const [cardDetails, setCardDetails] = useState({
-    number: "",
-    name: "",
-    expiry: "",
-    cvv: "",
-  });
-  const [upiId, setUpiId] = useState("");
-  const [paymentSuccess, setPaymentSuccess] = useState(false);
-  const [isProcessing, setIsProcessing] = useState(false);
-
   const bookingDetails = {
     img: images,
     movie: movieName,
@@ -44,232 +35,134 @@ const MoviePaymentBox = () => {
     convenienceFee: convenienceFee,
     taxRate: totalprice,
   };
-
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const subtotal = bookingDetails.seats.length * bookingDetails.pricePerTicket;
   const tax = 0.18 * bookingDetails.taxRate;
   const total = subtotal + bookingDetails.convenienceFee + tax;
+  function handleSubmit(e) {
+    e.preventDefault();
 
-  const handleCardInputChange = (e) => {
-    const { name, value } = e.target;
-    setCardDetails((prev) => ({ ...prev, [name]: value }));
-  };
+    const options = {
+      key: "rzp_test_mkGMMBKOGGS9rZ",
+      amount: Math.round(total * 100),
+      currency: "INR",
+      name: bookingDetails.movie,
+      description: `Booking for ${bookingDetails.seats.join(", ")}`,
+      image: bookingDetails.img,
+      handler: function (response) {
+        alert(
+          `Payment successful! Payment ID: ${response.razorpay_payment_id}`
+        );
+      },
+      prefill: {
+        name: name,
+        email: email,
+      },
+      theme: {
+        color: "#6e59a5",
+      },
+    };
 
-  const handleUpiChange = (e) => {
-    setUpiId(e.target.value);
-  };
-
-  const handlePayment = () => {
-    setIsProcessing(true);
-    // Simulate payment processing
-    setTimeout(() => {
-      setIsProcessing(false);
-      setPaymentSuccess(true);
-
-      // You might want to redirect after showing the success animation
-      setTimeout(() => {
-        // navigation to confirmation page could go here
-      }, 3000);
-    }, 2000);
-  };
-
-  if (paymentSuccess) {
-    return (
-      <div className={styles.paymentContainer}>
-        <div className={styles.successAnimation}>
-          <svg
-            className={styles.checkmark}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 52 52"
-          >
-            <circle
-              className={styles.checkmarkCircle}
-              cx="26"
-              cy="26"
-              r="25"
-              fill="none"
-            />
-            <path
-              className={styles.checkmarkCheck}
-              fill="none"
-              d="M14.1 27.2l7.1 7.2 16.7-16.8"
-            />
-          </svg>
-          <h2 className={styles.successTitle}>Payment Successful!</h2>
-          <p className={styles.successMessage}>
-            Your tickets have been booked successfully.
-          </p>
-          <div className={styles.bookingSummary}>
-            <p>
-              <strong>Movie:</strong> {bookingDetails.movie}
-            </p>
-            <p>
-              <strong>Theater:</strong> {bookingDetails.theater}
-            </p>
-            <p>
-              <strong>Seats:</strong> {bookingDetails.seats.join(", ")}
-            </p>
-            <p>
-              <strong>Show Time:</strong> {bookingDetails.time},{" "}
-              {bookingDetails.day}, {bookingDetails.date} {bookingDetails.month}
-            </p>
-            <p>
-              <strong>Amount Paid:</strong> ₹{total.toFixed(2)}
-            </p>
-          </div>
-        </div>
-      </div>
-    );
+    const rzp = new window.Razorpay(options);
+    rzp.open();
   }
 
   return (
-    <div className={styles.paymentContainer}>
-      <div className={styles.paymentBox}>
-        <div className={styles.movieSidebar}>
-          <h3 className={styles.sidebarHeader}>Booking Summary</h3>
-          <div className={styles.movieInfo}>
-            <div className={styles.moviediv}>
-              <img
-                src={images}
-                alt="movieimage"
-                className={styles.movieimage}
-              />
-              <div className={styles.movieinfodiv}>
-                <p className={styles.movieTitle}>{bookingDetails.movie}</p>
-                <p className={styles.movieDetail}>
-                  {bookingDetails.theater}-{bookingDetails.address}
-                </p>
-                <p className={styles.movieDetail}>
-                  {bookingDetails.date}-{bookingDetails.month},{" "}
-                  {bookingDetails.day} | {bookingDetails.time}
-                </p>
-              </div>
+    <div className={styles.checkoutBackground}>
+      <div className={styles.checkoutCard}>
+        <h1 className={styles.header}>Movie Ticket Checkout</h1>
+
+        <div className={styles.flexRow}>
+          <div className={styles.posterSection}>
+            <img
+              src={bookingDetails.img}
+              alt={bookingDetails.movie}
+              className={styles.poster}
+            />
+            <div className={styles.movieTitle}>{bookingDetails.movie}</div>
+            <div
+              className={styles.movieInfo}
+              style={{ fontSize: "20px", color: "black", fontWeight: "bold" }}
+            >
+              {bookingDetails.theater}{" "}
             </div>
-            <div className={styles.seatsContainer}>
+            <div className={styles.movieInfo} style={{ color: "black" }}>
+              {bookingDetails.address}{" "}
+            </div>
+            <div className={styles.movieInfo}>
+              <span>Date:</span> {bookingDetails.date}
+            </div>
+            <div className={styles.movieInfo}>
+              <span>Time:</span> {bookingDetails.time}
+            </div>
+            <div className={styles.movieInfo}>
+              <span>Hall:</span> {MOVIE.hall}
+            </div>
+            <div className={styles.seatBox}>
               Seats: {bookingDetails.seats.join(", ")}
             </div>
           </div>
+          <div className={styles.summarySection}>
+            <div className={styles.summaryBox}>
+              <div className={styles.summaryRow}>
+                <span>
+                  Seat(s): <b>{bookingDetails.seats.join(", ")}</b>
+                </span>
+                <span>
+                  ₹{bookingDetails.pricePerTicket}{" "}
+                  <span className={styles.smallText}>/ ticket</span>
+                </span>
+              </div>
+              <div className={styles.summaryRow}>
+                <span>Subtotal ({bookingDetails.seats.length} tickets)</span>
+                <span>₹{subtotal}</span>
+              </div>
+              <div className={styles.summaryRow}>
+                <span>Convenience Fee</span>
+                <span>₹{bookingDetails.convenienceFee}</span>
+              </div>
+              <div className={styles.summaryRow}>
+                <span>Tax (18%)</span>
+                <span>₹{tax.toFixed(2)}</span>
+              </div>
 
-          <div className={styles.priceSummary}>
-            <div className={styles.priceRow}>
-              <span>Subtotal ({bookingDetails.seats.length} tickets)</span>
-              <span>₹{subtotal}</span>
+              <div className={styles.summaryRowTotal}>
+                <span>Total</span>
+                <span>₹{total.toFixed(2)}</span>
+              </div>
             </div>
-            <div className={styles.priceRow}>
-              <span>Convenience Fee</span>
-              <span>₹{bookingDetails.convenienceFee}</span>
-            </div>
-            <div className={styles.priceRow}>
-              <span>Tax (18%)</span>
-              <span>₹{tax.toFixed(2)}</span>
-            </div>
-            <div className={styles.totalRow}>
-              <span>Total Amount</span>
-              <span>₹{total.toFixed(2)}</span>
-            </div>
+
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <label>
+                Name
+                <input
+                  className={styles.input}
+                  type="text"
+                  required
+                  value={name}
+                  placeholder="Full name"
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </label>
+              <label>
+                Email
+                <input
+                  className={styles.input}
+                  type="email"
+                  required
+                  value={email}
+                  placeholder="email@example.com"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </label>
+              <button type="submit" className={styles.payBtn}>
+                Pay Now
+              </button>
+            </form>
           </div>
-        </div>
-
-        <div className={styles.contentArea}>
-          <h3 className={styles.paymentHeader}>Payment Method</h3>
-
-          <div className={styles.paymentMethods}>
-            <button
-              className={`${styles.paymentMethodButton} ${
-                paymentMethod === "card" ? styles.active : ""
-              }`}
-              onClick={() => setPaymentMethod("card")}
-            >
-              Credit/Debit Card
-            </button>
-            <button
-              className={`${styles.paymentMethodButton} ${
-                paymentMethod === "upi" ? styles.active : ""
-              }`}
-              onClick={() => setPaymentMethod("upi")}
-            >
-              UPI Payment
-            </button>
-          </div>
-
-          <div className={styles.paymentForm}>
-            {paymentMethod === "card" ? (
-              <>
-                <div className={styles.formGroup}>
-                  <label>Card Number</label>
-                  <input
-                    type="text"
-                    name="number"
-                    placeholder="1234 5678 9012 3456"
-                    value={cardDetails.number}
-                    onChange={handleCardInputChange}
-                  />
-                </div>
-                <div className={styles.formGroup}>
-                  <label>Name on Card</label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="John Doe"
-                    value={cardDetails.name}
-                    onChange={handleCardInputChange}
-                  />
-                </div>
-                <div className={styles.formRow}>
-                  <div className={styles.formGroup}>
-                    <label>Expiry Date</label>
-                    <input
-                      type="text"
-                      name="expiry"
-                      placeholder="MM/YY"
-                      value={cardDetails.expiry}
-                      onChange={handleCardInputChange}
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-                    <label>CVV</label>
-                    <input
-                      type="text"
-                      name="cvv"
-                      placeholder="123"
-                      value={cardDetails.cvv}
-                      onChange={handleCardInputChange}
-                    />
-                  </div>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className={styles.formGroup}>
-                  <label>UPI ID</label>
-                  <input
-                    type="text"
-                    placeholder="yourname@upi"
-                    value={upiId}
-                    onChange={handleUpiChange}
-                  />
-                </div>
-                <p className={styles.upiNote}>
-                  You'll be redirected to your UPI app for payment
-                </p>
-              </>
-            )}
-          </div>
-
-          <button
-            className={styles.payButton}
-            onClick={handlePayment}
-            disabled={isProcessing}
-          >
-            {isProcessing ? (
-              <span className={styles.processingText}>Processing...</span>
-            ) : (
-              `Pay ₹${total.toFixed(2)}`
-            )}
-          </button>
         </div>
       </div>
     </div>
   );
-};
-
-export default MoviePaymentBox;
+}

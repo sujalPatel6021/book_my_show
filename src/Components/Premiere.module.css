@@ -44,6 +44,10 @@
   scroll-behavior: smooth;
   width: 100%;
   white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.cardmain::-webkit-scrollbar {
+  display: none; /* optional: hide scrollbar */
 }
 .cardmain img {
   width: 200px;

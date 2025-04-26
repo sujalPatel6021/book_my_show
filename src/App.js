@@ -18,10 +18,10 @@ import Users from "./Admin/User";
 import Movies from "./Admin/Movies";
 import Bookings from "./Admin/Bookings";
 import Profile from "./Admin/Profile";
+import ProtectedRoute from "./Admin/ProtectedRoute ";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -53,11 +53,47 @@ function App() {
           <Route path="/premierebook" element={<PremiereBook />} />
           <Route path="/musicstudiobook" element={<MusicStudioBook />} />
           <Route path="/adminpage" element={<Login />} />
-          <Route path="/adminpage/adminhome" element={<AdminHome />} />
-          <Route path="/adminpage/users" element={<Users />} />
-          <Route path="/adminpage/movies" element={<Movies />} />
-          <Route path="/adminpage/bookings" element={<Bookings />} />
-          <Route path="/adminpage/profile" element={<Profile />} />
+
+          <Route
+            path="/adminpage/adminhome"
+            element={
+              <ProtectedRoute>
+                <AdminHome />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/adminpage/users"
+            element={
+              <ProtectedRoute>
+                <Users />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/adminpage/movies"
+            element={
+              <ProtectedRoute>
+                <Movies />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/adminpage/bookings"
+            element={
+              <ProtectedRoute>
+                <Bookings />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/adminpage/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </div>
     </BrowserRouter>

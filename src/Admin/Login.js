@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    return localStorage.getItem("isLoggedIn") === "true";
+  });
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogin = (e) => {
     e.preventDefault();
 
     if (username === "sujal" && password === "sujal") {
-      navigate("/adminpage/adminhome");
+      localStorage.setItem("isLoggedIn", "true");
+      const from = location.state?.from?.pathname || "/adminpage/adminhome";
+      navigate(from, { replace: true });
     } else {
       alert("Wrong username or password");
     }
@@ -46,11 +52,10 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <Link to="/adminpage/adminhome">
-            <button type="submit" className={styles.login}>
-              Login
-            </button>
-          </Link>
+
+          <button type="submit" className={styles.login}>
+            Login
+          </button>
         </form>
       </div>
     </div>

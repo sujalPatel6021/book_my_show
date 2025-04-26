@@ -14,6 +14,42 @@
   align-items: center;
   padding: 0 20px;
 }
+.profileIcon {
+  font-size: 24px;
+  color: rgb(248, 68, 100);
+  cursor: pointer;
+  display: none;
+}
+.isLoggedIn .profileIcon {
+  display: block;
+}
+.profileDropdown {
+  position: relative;
+}
+
+.profileDropdownMenu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 150px;
+  z-index: 100;
+}
+
+.dropdownItem {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background-color: #f0f0f0;
+}
 
 .div1 {
   display: flex;
@@ -110,13 +146,6 @@
 }
 
 .signinbutton:hover {
-  cursor: pointer;
-}
-
-.profileIcon {
-  display: none;
-  font-size: 24px;
-  color: rgb(248, 68, 100);
   cursor: pointer;
 }
 

@@ -98,6 +98,11 @@ const MoviesCard = () => {
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
+    swipeToSlide: true,
+    cssEase: "ease-in-out",
+    draggable: true,
+    onSwipe: true,
+    pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1024,

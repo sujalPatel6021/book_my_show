@@ -124,12 +124,24 @@ export default function Footer() {
         <hr className={styles.hr} />
       </div>
       <div className={styles.socialdiv}>
-        <FaFacebook className={styles.logoicon} />
-        <FaSquareXTwitter className={styles.logoicon} />
-        <FaInstagram className={styles.logoicon} />
-        <FaYoutube className={styles.logoicon} />
-        <FaPinterest className={styles.logoicon} />
-        <FaLinkedin className={styles.logoicon} />
+        <Link to="https://www.facebook.com/">
+          <FaFacebook className={styles.logoicon} />
+        </Link>
+        <Link to="https://twitter.com/">
+          <FaSquareXTwitter className={styles.logoicon} />
+        </Link>
+        <Link to="https://www.instagram.com/">
+          <FaInstagram className={styles.logoicon} />
+        </Link>
+        <Link to="https://www.youtube.com/">
+          <FaYoutube className={styles.logoicon} />
+        </Link>
+        <Link to="https://www.pinterest.com/">
+          <FaPinterest className={styles.logoicon} />
+        </Link>
+        <Link to="https://www.linkedin.com/">
+          <FaLinkedin className={styles.logoicon} />
+        </Link>
       </div>
       <div className={styles.copyrightdiv}>
         <p className={styles.copy}>

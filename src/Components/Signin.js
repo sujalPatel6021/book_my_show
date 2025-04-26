@@ -4,7 +4,7 @@ import google from "../Images/google.png";
 import email from "../Images/email.png";
 import apple from "../Images/apple.png";
 
-const SignInPopup = ({ isOpen, onClose }) => {
+const SignInPopup = ({ isOpen, onClose, onSignInSuccess }) => {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
   if (!isOpen) return null;
@@ -16,7 +16,10 @@ const SignInPopup = ({ isOpen, onClose }) => {
   const handleBackToOptions = () => {
     setShowEmailForm(false);
   };
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSignInSuccess();
+  };
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
@@ -31,7 +34,7 @@ const SignInPopup = ({ isOpen, onClose }) => {
         <h2 className={styles.signinhead}>Sign In</h2>
 
         {showEmailForm ? (
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <button
               type="button"
               className={styles.backButton}
@@ -64,7 +67,7 @@ const SignInPopup = ({ isOpen, onClose }) => {
             </p>
           </form>
         ) : (
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.socialButtons}>
               <button type="button" className={styles.socialButton}>
                 <img src={google} alt="google" className={styles.socialIcon} />
@@ -96,6 +99,7 @@ const SignInPopup = ({ isOpen, onClose }) => {
                 className={styles.phoneInput}
                 pattern="[0-9]{10}"
                 maxLength="10"
+                required
               />
             </div>
 

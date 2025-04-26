@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Adminhome.module.css";
 
 const Navbar = ({ toggleSidebar, isDarkMode, toggleTheme }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
-
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    navigate("/adminpage"); // Redirect to login page
+  };
   return (
     <>
       <nav className={`${styles.navbar} ${isDarkMode ? styles.dark : ""}`}>
@@ -157,7 +161,7 @@ const Navbar = ({ toggleSidebar, isDarkMode, toggleTheme }) => {
                       </svg>
                       Profile
                     </Link>
-                    <Link to="/adminpage" className={styles.logout}>
+                    <Link onClick={handleLogout} className={styles.logout}>
                       <svg
                         width="16"
                         height="16"

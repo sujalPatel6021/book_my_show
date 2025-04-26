@@ -39,8 +39,7 @@ const events = [
     language: "Nepali",
   },
   {
-    img: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:l-image,i-discovery-catalog@@icons@@bms_premiere_v1.png,t-false,lfo-bottom_left,l-end/et00404965-nassmyykdq-portrait.jpg",
-    title: "Idiyan Chandhu",
+    img: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:l-image,i-discovery-catalog@@icons@@bms_premiere_v1.png,t-false,lfo-bottom_left,l-end/et00132276-erkkmefxav-portrait.jpg",
     language: "Malayalam",
   },
 ];
